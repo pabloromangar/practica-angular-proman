@@ -1,0 +1,16 @@
+.api-search-container {
+    margin-top: 50px;
+  }
+  
+  input {
+    max-width: 400px;
+  }
+  
+  h2 {
+    margin-top: 20px;
+  }
+  
+  .list-group-item {
+    cursor: pointer;
+  }
+  

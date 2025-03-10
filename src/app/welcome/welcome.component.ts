@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
-  standalone: false,
   templateUrl: './welcome.component.html',
-  styleUrl: './welcome.component.css'
+  styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent {
-
+  title = 'Welcome to Game Finder';
+  description = 'Explore the world of video games and find your favorites!';
 }

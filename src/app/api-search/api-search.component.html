@@ -1,1 +1,24 @@
-<p>api-search works!</p>
+<div class="api-search-container text-center">
+    <h1>Search for Games</h1>
+    <input
+      type="text"
+      [(ngModel)]="query"
+      placeholder="Enter game title"
+      class="form-control"
+    />
+    <button (click)="searchGames()" class="btn btn-primary mt-2">Search</button>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  
+    <div *ngIf="games.length > 0" class="mt-4">
+      <h2>Search Results:</h2>
+      <ul class="list-group">
+        <li *ngFor="let game of games" class="list-group-item">
+          {{ game.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
