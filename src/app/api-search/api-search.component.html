@@ -1,24 +1,34 @@
-<div class="api-search-container text-center">
-    <h1>Search for Games</h1>
-    <input
-      type="text"
-      [(ngModel)]="query"
-      placeholder="Enter game title"
-      class="form-control"
-    />
-    <button (click)="searchGames()" class="btn btn-primary mt-2">Search</button>
-  
-    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
-      {{ errorMessage }}
-    </div>
-  
-    <div *ngIf="games.length > 0" class="mt-4">
-      <h2>Search Results:</h2>
-      <ul class="list-group">
-        <li *ngFor="let game of games" class="list-group-item">
-          {{ game.name }}
-        </li>
-      </ul>
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Search for a Game</h2>
+
+  <!-- Input de búsqueda -->
+  <div class="input-group mb-3 col">
+    <input type="text" class="form-control" placeholder="Enter game name..." [(ngModel)]="query">
+    <button class="btn btn-primary" (click)="searchGames()">Search</button>
+  </div>
+
+  <!-- Mensaje de error -->
+  <div *ngIf="errorMessage" class="alert alert-danger text-center mt-3">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Lista de juegos -->
+  <div class="row mt-4" *ngIf="games.length > 0">
+    <div class="col-md-4 mb-4" *ngFor="let game of games">
+      <div class="card h-100 shadow-sm">
+        <img [src]="game.background_image" class="card-img-top" alt="{{ game.name }}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ game.name }}</h5>
+          <p class="card-text">Released: {{ game.released }}</p>
+          <p class="card-text">Rating: ⭐ {{ game.rating }} ({{ game.ratings_count }} reviews)</p>
+          <p class="card-text">
+            Genres: <span *ngFor="let genre of game.genres">{{ genre.name }} </span>
+          </p>
+          <a [href]="'https://rawg.io/games/' + game.id" target="_blank" class="btn btn-primary mt-auto">
+            View on RAWG
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-  
+</div>
