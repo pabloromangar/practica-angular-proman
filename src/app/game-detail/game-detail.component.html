@@ -1,0 +1,10 @@
+<div *ngIf="game" class="container mt-4">
+    <h2>{{ game.name }}</h2>
+    <img [src]="game.background_image" class="img-fluid mb-3" alt="{{ game.name }}">
+    <p><strong>Rating:</strong> {{ game.rating }}</p>
+    <p><strong>Géneros:</strong> {{ game.genres.map(g => g.name).join(', ') }}</p>
+    <p><strong>Descripción:</strong></p>
+    <p [innerHTML]="game.description"></p>
+    <a routerLink="/search" class="btn btn-secondary mt-3">Volver</a>
+  </div>
+  

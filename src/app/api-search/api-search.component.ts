@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // Necesario para [(ngModel)]
 import { GameService } from '../game.service';
+
 @Component({
   standalone: true,
   selector: 'app-api-search',

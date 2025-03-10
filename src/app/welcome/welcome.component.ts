@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -6,6 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent {
-  title = 'Welcome to Game Finder';
-  description = 'Explore the world of video games and find your favorites!';
+  title = 'Bienvenido a GameFinder';
+  description = '¡Explora el mundo de los videojuegos y encuentra tus favoritos!';
 }
